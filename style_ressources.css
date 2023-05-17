@@ -248,6 +248,18 @@ article.blocRessourcesMotivationnelles {
 
 
 /* en tete */
+
+.entete {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    gap: 2rem;
+    margin-right: 5%;
+    margin-left: 5%;
+    color: black;
+}
+
 section {
     padding-top: 13%;
     height: 100vh;
