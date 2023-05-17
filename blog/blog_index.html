@@ -4,33 +4,33 @@
     <title>Blog Page</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <style>
-        /* CARROUSSEL */
-        .slick-slide {
-            margin: 0px 20px;
-            margin-top: 5rem;
+        .carousel div {
+            margin: 10px;
+            padding: 10px;
+            margin-top: 3rem;
         }
-        .slick-slide img {
+
+        .carousel .article-container:hover {
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            border-radius: 25px;
+        }
+
+        .carousel .image-wrapper {
             width: 100%;
+            height: 200px;
+            overflow: hidden;
+            margin: auto;
+            display: flex;
+            justify-content: center; /* Centre horizontalement */
+            align-items: center; /* Centre verticalement */
         }
-        .slick-slider {
-            position: relative;
 
-            display: block;
-            box-sizing: border-box;
-
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-
-            -webkit-touch-callout: none;
-            -khtml-user-select: none;
-            -ms-touch-action: pan-y;
-            touch-action: pan-y;
-            -webkit-tap-highlight-color: transparent;
-        }
-        #profile {
-            margin-top: 50px;
+        .carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            margin: auto;
+            border: none;
         }
         .carousel a {
         color: inherit; /* La couleur du lien sera la même que celle du texte normal */
@@ -39,14 +39,6 @@
     .carousel a:hover { 
         color: blue; /* La couleur du lien sera bleue lorsque la souris est dessus */
     }
-    #monprofil {
-    font-size: 20px;
-}
-
-#linkedin a {
-    color: blue;
-    text-decoration: none;
-}
 
 /* Reset et styles généraux */
 * {
@@ -239,31 +231,30 @@ a {
         <!-- The carousel data would be added here by JavaScript -->
     </div>
 
-    <div id="profile">
-        <script type="IN/MemberProfile" data-id="linkedin-profile-url" data-format="inline"></script>
-    </div>
-
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://platform.linkedin.com/in.js" type="text/javascript"> lang: fr_FR</script>
     <script>
         var articles = [
             // Add your articles here
-            { thumbnail: "https://docs.modular.com/static/images/mojo-social-card.png", title: "Decouverte de Mojo: le nouveau langage de programmation qui revolutionne l'IA", preview: "Bienvenue dans le monde du nouveau langage de programmation Mojo, conçu comme une extension du langage de programmation Python.", url: "../mojo/modjo.html" }
+            { thumbnail: "https://sparkbox.com/uploads/featured_images/e-muller_20-05.png", title: "Devoiler le Mystère des Boucles en Programmation: Les boucles en programmation", preview: "Il y a un dicton populaire dans le monde de la programmation : 'Ne vous fatiguez pas, automatisez-le !'...", url: "articles/mojo/modjo.html"},
+            { thumbnail: "https://docs.modular.com/static/images/mojo-social-card.png", title: "Decouverte de Mojo: le nouveau langage de programmation qui revolutionne l'IA", preview: "Bienvenue dans le monde du nouveau langage de programmation Mojo, conçcus comme une extension du langage de programmation Python...", url: "articles/boulces/boucles.html"},
+            {thumbnail: "https://www.openmindt.com/wp-content/uploads/2019/11/Openmind-Technologie-Big-Data-H.jpg", title: "Plonger dans le Monde des Types de Données en Programmation", preview: "Ah, la programmation! C'est un univers de logique et de créativité, où chaque ligne de code compte. Mais, savez-vous...", url: "articles/types_de_donnees/types_de_donnees.html"}
         ];
 
-        $(document).ready(function() {
-            articles.forEach(function(article) {
-                var slide = '<div><h3><a href="' + article.url + '">' + article.title + '</a></h3><img src="' + article.thumbnail + '"/><p>' + article.preview + '</p></div>';
-                $('.carousel').append(slide);
-            });
-
-            $('.carousel').slick({
-                infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 3
-            });
+            $(document).ready(function() {
+        articles.forEach(function(article) {
+            var slide = '<div class="article-container"><h3><a href="' + article.url + '">' + article.title + '</a></h3><div class="image-wrapper"><img src="' + article.thumbnail + '"/></div><p>' + article.preview + '</p></div>';
+            $('.carousel').append(slide);
         });
+
+        $('.carousel').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3
+        });
+    });
+
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -286,5 +277,6 @@ a {
 });
 
     </script>
+    <script src="blog_script.js"></script>
 </body>
 </html>

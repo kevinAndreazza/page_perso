@@ -97,24 +97,6 @@ a {
     margin-right: 2.5%;
 }
 
-.bloc-3d {
-    margin-left: 10%;
-    margin-top: 10%;
-    margin-right: 10%;
-    border-radius: 30px;
-    padding: 2.5%;
-    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    box-shadow: rgba(216,198,154, 0.4)5px 5px 5px 5px, rgba(216,198,154, 0.3) 10px 10px 10px 10px, rgba(216,198,154, 0.2) 15px 15px 15px 15px, rgba(216,198,154, 0.1) 20px 20px 20px 20px, rgba(216,198,154, 0.05) 25px 25px ; 
-    border: 100px;
-    border-color: black;
-    align-content: space-between;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-    text-align: center;
-    animation: fadeIn 2s;
-}
 
 .bloc-3d h1 {
     font-size: 2rem;
@@ -183,28 +165,9 @@ border-radius: 30px;
     .nav-links {
         display: none;
     }
-
-    .bloc-3d {
-    margin-left: 100px;
-    margin-top: 150px;
-    margin-right: 100px;
-    border-radius: 30px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60vh;
-    text-align: center;
-    animation: fadeIn 2s;
-    background-color: rgba(240,245,242,255);
-    box-shadow: rgba(24,116,165, 0.4)5px 5px 5px 5px, rgba(24,116,165, 0.3) 10px 10px 10px 10px, rgba(24,116,165, 0.2) 15px 15px 15px 15px, rgba(24,116,165, 0.1) 20px 20px 20px 20px, rgba(24,116,165, 0.05) 25px 25px ; 
-}
-
     .hamburger {
         display: flex;
     }
-
     .nav-links.active {
     display: flex;
     flex-direction: column;
@@ -220,18 +183,15 @@ border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
     animation: slideIn 0.3s forwards;
 }
-
 .nav-links.active li {
     margin: 0.5rem 0;
 }
-
 .content {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
-
 /* Ajout pour le responsive des éléments */
 
 @media (max-width: 768px) {
