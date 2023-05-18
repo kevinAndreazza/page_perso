@@ -196,9 +196,6 @@ article.blocRessourcesMotivationnelles {
     margin-bottom: 2.5%;
 }
 
-
-
-
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -210,6 +207,22 @@ article.blocRessourcesMotivationnelles {
     }
 }
 
+footer {
+    background-color: #F8F8F8;
+    padding: 20px
+}
+
+.banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    animation: bannerSlide 5s infinite;
+}
+
+@keyframes bannerSlide {
+    0%, 100% {transform: translateX(0);}
+    50% {transform: translateX(-10px);}
+}
 /* Responsive */
 @media (max-width: 768px) {
 

@@ -16,6 +16,78 @@ a {
     text-decoration: none;
     color: inherit;
 }
+/* Styles pour le conteneur du blog */
+#blog-container {
+    padding-top: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Styles pour les miniatures des articles du blog */
+.blog-item {
+    width: 30%;
+    margin: 15px;
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    border-radius: 2rem;
+    transition: all 0.3s ease-in-out;
+    transform: translateY(0);
+}
+
+.blog-item:hover {
+        box-shadow: 20px 40px 50px 20px rgba(0,0,0,0.2);
+    transform: translateY(-15px);
+}
+
+.blog-item img {
+    width: 100%;
+    height: 50%;
+    border-bottom: none;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+}
+
+.blog-item .title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px;
+    text-align: center;
+}
+
+.blog-item .preview {
+    font-size: 16px;
+    margin: 10px;
+    text-align: center;
+
+}
+/* Modification du style pour que le texte s'adapte à la taille de l'élément du blog */
+.blog-item .title, .blog-item .preview {
+    /* Autres styles... */
+    /* Utilisation de pourcentage pour le margin permet d'adapter le texte à la taille de l'item */
+    margin: 5%; 
+    /* Utilisation de 'vw' pour la taille de la police pour la rendre responsive */
+    font-size: 1.5vw; 
+}
+
+
+/* Styles pour le pied de page et le badge LinkedIn */
+footer {
+    background-color: #F8F8F8;
+    padding: 20px
+}
+
+.banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    animation: bannerSlide 5s infinite;
+}
+
+@keyframes bannerSlide {
+    0%, 100% {transform: translateX(0);}
+    50% {transform: translateX(-10px);}
+}
 
 /* Barre de navigation */
 .navbar {
@@ -83,83 +155,6 @@ a {
     transition: all 0.3s;
 }
 
-/* Bloc central 3D */
-
-.photo-profil {
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
-  object-position: top;
-  border-radius: 5%;
-}
-
-.image {
-    margin-right: 2.5%;
-}
-
-
-.bloc-3d h1 {
-    font-size: 2rem;
-}
-.bloc-3d p {
-    line-height: 30px;
-}
-
-.buttons {
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  gap: 7rem;
-  animation: fadeIn 2s;
-}
-
-button,
-.button {
-  background-color: rgba(66,78,86,255);
-  color: #fff;
-  border: none;
-  padding: 1.6rem 3rem;
-  font-size: 1.1rem;
-  cursor: pointer;
-  text-decoration: none;
-  border-radius: 30px;
-  border-radius: 30px;
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-}
-
-button:hover,
-.button:hover {
-animation: fadeIn 0.3s;
-font-weight: bold;
-background-color: rgba(209,172,103,255);
-box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-box-shadow: rgba(66,78,86, 0.4) 5px 5px, rgba(66,78,86, 0.3) 10px 10px, rgba(66,78,86, 0.2) 15px 15px, rgba(66,78,86, 0.1) 20px 20px, rgba(66,78,86, 0.05) 25px 25px;
-border-radius: 0px;
-}
-
-button:focus {
-outline: none;
-border-radius: 30px;
-}
-
-.content {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
 /* Responsive */
 @media (max-width: 768px) {
     .nav-links {
@@ -168,6 +163,7 @@ border-radius: 30px;
     .hamburger {
         display: flex;
     }
+
     .nav-links.active {
     display: flex;
     flex-direction: column;
@@ -183,67 +179,37 @@ border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
     animation: slideIn 0.3s forwards;
 }
+
 .nav-links.active li {
     margin: 0.5rem 0;
 }
-.content {
+
+#blog-container {
+    padding-top: 5rem;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
-/* Ajout pour le responsive des éléments */
-
-@media (max-width: 768px) {
-    /* Ajustements du bloc central 3D */
-    .bloc-3d {
-        margin: 150px 5%;
-        flex-direction: column;
-        height: auto;
-        padding: 2.5%;
-        padding-bottom: 0;
-        margin-bottom: 0;
-    }
-
-    .content {
-        flex-direction: column;
-    }
+.blog-item {
+    width: 85%;
+    margin: 15px;
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    border-radius: 2rem;
+    transition: all 0.3s ease-in-out;
+    transform: translateY(0);
+}
+.blog-item .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px;
+    text-align: center;
 }
 
-    .image {
-        padding-top: 10px;
-        margin-right: 0;
-        margin-bottom: 2rem;
-    }
+.blog-item .preview {
+    font-size: 16px;
+    margin: 5px;
+    text-align: center;
 
-    .text {
-        padding: 1rem;
-        max-width: 100%;
-    }
-
-    /* Ajustements des boutons */
-    .buttons {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: center;
-        text-align: center;
-        padding: 1.6rem 3rem
-    }
-
-    button,
-    .button {
-        width: 75%;
-        margin-bottom: 5px;
-    }
 }
-
-
-@keyframes slideIn {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-

@@ -116,10 +116,6 @@ h1 {
     background-color: rgba(209,172,103,255);
     transition: all 0.3s;
 }
-
-
-
-
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -129,6 +125,23 @@ h1 {
         opacity: 1;
         transform: scale(1);
     }
+}
+
+footer {
+    background-color: #F8F8F8;
+    padding: 20px
+}
+
+.banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    animation: bannerSlide 5s infinite;
+}
+
+@keyframes bannerSlide {
+    0%, 100% {transform: translateX(0);}
+    50% {transform: translateX(-10px);}
 }
 
 /* Responsive */

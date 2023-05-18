@@ -1,215 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Blog Page</title>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <style>
-        .carousel div {
-            margin: 10px;
-            padding: 10px;
-            margin-top: 3rem;
-        }
-
-        .carousel .article-container:hover {
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
-            border-radius: 25px;
-        }
-
-        .carousel .image-wrapper {
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
-            margin: auto;
-            display: flex;
-            justify-content: center; /* Centre horizontalement */
-            align-items: center; /* Centre verticalement */
-        }
-
-        .carousel img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            margin: auto;
-            border: none;
-        }
-        .carousel a {
-        color: inherit; /* La couleur du lien sera la même que celle du texte normal */
-        text-decoration: none; /* Supprime le soulignement du lien */
-    }
-    .carousel a:hover { 
-        color: blue; /* La couleur du lien sera bleue lorsque la souris est dessus */
-    }
-
-/* Reset et styles généraux */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: rgba(231,235,234,255);
-}
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Barre de navigation */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(66,78,86,255);
-    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    padding: 1rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-}
-.nav-logo p {
-    color: rgba(209,172,103,255);
-    font-weight: bolder;
-    font-size: 1.6rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    text-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-}
-.nav-links {
-    display: flex;
-}
-.nav-links li {
-    list-style: none;
-    margin-left: 2rem;
-    margin-right: 2rem;
-}
-.nav-links a {
-    font-size: 1.2rem;
-    color: rgba(232,237,240,255);
-    transition: color 0.3s;
-    letter-spacing: 3px;
-    text-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-}
-.nav-links a:hover {
-    color: rgba(232,237,240,255);
-    text-decoration: underline;
-    animation: fadeIn 0.2s;
-    text-underline-offset: 0.5rem;
-}
-
-/* HAMBURGUER BAR */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 25px;
-    cursor: pointer;
-}
-.hamburger span {
-    display: block;
-    height: 3px;
-    background-color: rgba(209,172,103,255);
-    transition: all 0.3s;
-}
-
-/* KEY FRAM AND RESPONSIVE */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    .hamburger {
-        display: flex;
-    }
-    .nav-links.active {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    position: fixed;
-    top: 60px;
-    right: 0;
-    margin-top: 10px;
-    width: 230px;
-    height: 100%;
-    background-color: rgba(66,78,86, 0.3);
-    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    animation: slideIn 0.3s forwards;
-}
-.nav-links.active li {
-    margin: 0.5rem 0;
-}
-.content {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Ajout pour le responsive des éléments */
-@media (max-width: 768px) {
-    /* Ajustements du bloc central 3D */
-    .bloc-3d {
-        margin: 150px 5%;
-        flex-direction: column;
-        height: auto;
-        padding: 2.5%;
-        padding-bottom: 0;
-        margin-bottom: 0;
-    }
-    .content {
-        flex-direction: column;
-    }
-}
-    .image {
-        padding-top: 10px;
-        margin-right: 0;
-        margin-bottom: 2rem;
-    }
-    .text {
-        padding: 1rem;
-        max-width: 100%;
-    }
-    /* Ajustements des boutons */
-    .buttons {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: center;
-        text-align: center;
-        padding: 1.6rem 3rem
-    }
-    button,
-    .button {
-        width: 75%;
-        margin-bottom: 5px;
-    }
-}
-@keyframes slideIn {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-    </style>
+    <!-- Metadonnées pour le référencement et l'affichage correct sur les appareils mobiles -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog</title>
+    <!-- Style CSS pour le blog -->
+    <link rel="stylesheet" type="text/css" href="blog_style.css">
 </head>
 <body>
+     <!-- Barre de navigation -->
     <nav class="navbar">
         <div class="nav-logo">
             <p>BLOG</p>
@@ -226,57 +26,19 @@ a {
             <span></span>
         </div>
     </nav>
-
-    <div class="carousel">
-        <!-- The carousel data would be added here by JavaScript -->
+    <!-- Conteneur pour les articles du blog -->
+    <div id="blog-container">
+        <!-- Les articles du blog vont ici. Ils sont triés par date de parution avec JavaScript. -->
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="https://platform.linkedin.com/in.js" type="text/javascript"> lang: fr_FR</script>
-    <script>
-        var articles = [
-            // Add your articles here
-            { thumbnail: "https://sparkbox.com/uploads/featured_images/e-muller_20-05.png", title: "Devoiler le Mystère des Boucles en Programmation: Les boucles en programmation", preview: "Il y a un dicton populaire dans le monde de la programmation : 'Ne vous fatiguez pas, automatisez-le !'...", url: "articles/mojo/modjo.html"},
-            { thumbnail: "https://docs.modular.com/static/images/mojo-social-card.png", title: "Decouverte de Mojo: le nouveau langage de programmation qui revolutionne l'IA", preview: "Bienvenue dans le monde du nouveau langage de programmation Mojo, conçcus comme une extension du langage de programmation Python...", url: "articles/boulces/boucles.html"},
-            {thumbnail: "https://www.openmindt.com/wp-content/uploads/2019/11/Openmind-Technologie-Big-Data-H.jpg", title: "Plonger dans le Monde des Types de Données en Programmation", preview: "Ah, la programmation! C'est un univers de logique et de créativité, où chaque ligne de code compte. Mais, savez-vous...", url: "articles/types_de_donnees/types_de_donnees.html"}
-        ];
-
-            $(document).ready(function() {
-        articles.forEach(function(article) {
-            var slide = '<div class="article-container"><h3><a href="' + article.url + '">' + article.title + '</a></h3><div class="image-wrapper"><img src="' + article.thumbnail + '"/></div><p>' + article.preview + '</p></div>';
-            $('.carousel').append(slide);
-        });
-
-        $('.carousel').slick({
-            infinite: true,
-            slidesToShow: 3,
-            slidesToScroll: 3
-        });
-    });
-
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-
-    const links = document.querySelectorAll('.nav-links a');
-    links.forEach(link => {
-        link.addEventListener('mouseenter', () => {
-            link.style.textDecoration = 'underline';
-        });
-        link.addEventListener('mouseleave', () => {
-            link.style.textDecoration = 'none';
-        });
-    });
-});
-
-    </script>
+    <!-- Le pied de page avec le badge LinkedIn -->
+    <footer>
+        <div class="banner">
+            <div class="badge-base LI-profile-badge" data-locale="fr_FR" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="kevin-andreazza-24457a244" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://fr.linkedin.com/in/kevin-andreazza-24457a244?trk=profile-badge">Profil linkedIn</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Inclure le script JavaScript pour trier les articles du blog -->
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
     <script src="blog_script.js"></script>
 </body>
 </html>
